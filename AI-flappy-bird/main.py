@@ -69,7 +69,7 @@ def main():
 
 
     clock = pg.time.Clock()
-    birdy = Bird(230,400)
+    birdy = Bird(200,200)
     ground = Ground(790)
     pipes = [Pipe(700)]
 
@@ -81,6 +81,11 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 running = False
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_SPACE:
+                    birdy.jump()
+                if event.key == pg.K_ESCAPE:
+                    running = False
 
         remove = []
         for pipe in pipes:
@@ -94,7 +99,7 @@ def main():
                 pipe.passed = True
                 add_pipe = True
             pipe.move()
-
+            
 
         if add_pipe:
             score +=1
@@ -104,6 +109,8 @@ def main():
 
         for pipe in remove:
             pipes.remove(pipe)
+
+        birdy.move()
 
         if birdy.y + birdy.img.get_height() >= 790:
             print("you ded, game over")

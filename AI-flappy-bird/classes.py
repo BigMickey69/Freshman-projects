@@ -21,11 +21,26 @@ GND_IMG = scale_image(pg.image.load(os.path.join("assets","ground.png")),2)
 
 SCROLL_VELO = 5
 
+def blitRotateCenter(win, image, topleft, angle):
+    rotated_image = pg.transform.rotate(image, angle)
+    new_rect = rotated_image.get_rect(center = image.get_rect(topleft = topleft).center)
+    win.blit(rotated_image, new_rect.topleft)
+
+
+def inflate_mask(mask, pixels):
+    inflated_mask = pg.mask.Mask((mask.get_size()[0] - 2 * pixels, mask.get_size()[1] - 2 * pixels))
+    for x in range(inflated_mask.get_size()[0]):
+        for y in range(inflated_mask.get_size()[1]):
+            if mask.get_at((x + pixels, y + pixels)):
+                inflated_mask.set_at((x, y), 1)
+    return inflated_mask
+
 class Bird:
     IMGS = BIRD_IMGS
     ANIMATION_RATE = 5
     ROT_VELO = 20
     MAX_ROT = 25
+    MIN_ROT = -90
 
     def __init__ (self, x, y):
         self.x = x
@@ -37,18 +52,21 @@ class Bird:
         self.cycle = 0
         self.img = self.IMGS[0]
         self.height = self.y
+
     def jump(self):
-        self.velo = -10.5
+        self.velo = -10.3
         self.tick_count = 0
         self.height = self.y
+        self.tilt = self.MAX_ROT
+
     def move(self):
         self.tick_count +=1
         # d is the amount moved by "gravity"
-        d = self.velo*self.tick_count + 1.5*self.tick_count**2 
-        if d >= 16:
-            d = 16
+        d = self.velo * self.tick_count + 1.2 * self.tick_count**2.1
+        if d >= 20:
+            d = 20
         elif d < 0: # makes movement feel just a bit better
-            d -=2
+            d -= 2
 
         self.y +=d
 
@@ -57,7 +75,7 @@ class Bird:
             if self.tilt > self.MAX_ROT:
                 self.tilt = self.MAX_ROT
         else:
-            if self.tilt > -90:
+            if self.tilt > self.MIN_ROT:
                 self.tilt -= self.ROT_VELO
     
     def draw(self, win):
@@ -70,21 +88,19 @@ class Bird:
                 self.cycle = 0 
             self.img = self.IMGS[self.cycle]
 
-        if self.tilt <= -75:
+        if self.tilt <= -70:
             self.img = self.IMGS[1]
             self.count = 0
             self.cycle = 1
 
-        rotated_image = pg.transform.rotate(self.img, self.tilt)
-        new_rect = rotated_image.get_rect(center=self.img.get_rect(topleft = (self.x, self.y)).center)
-        win.blit(rotated_image, new_rect.topleft)
+        blitRotateCenter(win, self.img, (self.x, self.y), self.tilt)
 
 
     def get_mask(self):
         return pg.mask.from_surface(self.img)
 
 class Pipe:
-    GAP = 220
+    GAP = 210
     VELO = SCROLL_VELO
 
     def __init__(self, x):
@@ -102,7 +118,7 @@ class Pipe:
 
 
     def set_height(self):
-        self.top_height = random.randint(50,500)
+        self.top_height = random.randint(30,520)
         self.top = self.top_height - self.TOP_PIPE.get_height()
         self.bottom = self.top_height + self.GAP
 
@@ -113,8 +129,9 @@ class Pipe:
         win.blit(self.TOP_PIPE, (self.x, self.top))
         win.blit(self.BOTTOM_PIPE, (self.x, self.bottom))
         
+    
     def collide(self, bird):
-        bird_mask = bird.get_mask()
+        bird_mask = inflate_mask(bird.get_mask(),2)
         top_mask = pg.mask.from_surface(self.TOP_PIPE)
         bottom_mask = pg.mask.from_surface(self.BOTTOM_PIPE)
 
