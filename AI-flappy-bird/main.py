@@ -3,6 +3,9 @@ import os
 import time
 from classes import Bird, Pipe, Ground
 
+pg.font.init()
+FONT = pg.font.SysFont("comicsans", 45)
+
 WIN_WIDTH = 600
 WIN_HEIGHT = 900
 
@@ -18,9 +21,23 @@ draw_count = 0
 bg_y = 0
 draw_cycle = 0
 bg_breath = 3
-def draw_window(win, bird, pipes, ground):
+def draw_score(win, score):
+    WHITE = (0,0,0)
+    BLACK = (255,255,255)
+    inner_score = FONT.render(f"Score: {score}", 1, BLACK)
+    outer_score = FONT.render(f"Score: {score}", 1, WHITE)
+    x = WIN_WIDTH - 10 - inner_score.get_width()
+    y = 10
+    win.blit(outer_score, (x-2,y-2))
+    win.blit(outer_score, (x-2,y+2))
+    win.blit(outer_score, (x+2,y-2))
+    win.blit(outer_score, (x+2,y+2))
+    win.blit(inner_score, (x,y))
+
+def draw_window(win, bird, pipes, ground, score):
     global draw_count, bg_y, draw_cycle, bg_breath
 
+    
     draw_count += 1
     if draw_count == 30:
         draw_count = 0
@@ -34,15 +51,14 @@ def draw_window(win, bird, pipes, ground):
             bg_y +=bg_breath
 
 
-    win.blit(BG_IMG, (0,bg_y))
 
+    win.blit(BG_IMG, (0,bg_y))
     for pipe in pipes:
         pipe.draw(win)
-    
-    
     ground.move()
     ground.draw(win)
     bird.draw(win)
+    draw_score(win, score)
     
     pg.display.update()
 
@@ -83,13 +99,16 @@ def main():
         if add_pipe:
             score +=1
             print(f"Current score: {score}")
-            pipes.append(Pipe(700))
+            pipes.append(Pipe(620))
             add_pipe = False
 
         for pipe in remove:
             pipes.remove(pipe)
 
-        draw_window(WIN, birdy, pipes, ground)
+        if birdy.y + birdy.img.get_height() >= 790:
+            print("you ded, game over")
+
+        draw_window(WIN, birdy, pipes, ground,score)
 
     pg.quit()
 
