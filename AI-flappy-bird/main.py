@@ -1,44 +1,53 @@
 import pygame as pg
 import os
 import time
+from classes import Bird
 
 WIN_WIDTH = 600
-WIN_HEIGHT = 800
+WIN_HEIGHT = 900
 
-BIRD_IMG1 = pg.image.load(os.path.join("AI-flappy-bird","assets","bird1.png"))
-BIRD_IMG2 = pg.image.load(os.path.join("AI-flappy-bird","assets","bird2.png"))
-BIRD_IMG3 = pg.image.load(os.path.join("AI-flappy-bird","assets","bird3.png"))
 
-BIRD_IMGS = [BIRD_IMG1, BIRD_IMG2, BIRD_IMG3]
-for image in BIRD_IMGS:
-    image = pg.transform.scale2x(image)
 
-BIRD_IMG3 = pg.transform.scale2x(pg.image.load(os.path.join("AI-flappy-bird","assets","pipe.png")))
+PIPE_IMG3 = pg.transform.scale2x(pg.image.load(os.path.join("AI-flappy-bird","assets","pipe.png")))
 GND_IMG = pg.transform.scale2x(pg.image.load(os.path.join("AI-flappy-bird","assets","ground.png")))
-BG_IMG = pg.transform.scale2x(pg.image.load(os.path.join("AI-flappy-bird","assets","night.png")))
+BG_IMG = pg.image.load(os.path.join("AI-flappy-bird","assets","night.png"))
+
+
+WIN = pg.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
+pg.display.set_caption("Flappy Bird")
 
 
 
-class Bird:
-    IMGS = BIRD_IMGS
-    ANIMATION_RATE = 5
-    ROT_VELO = 20
-    MAX_ROT = 25
 
-    def __init__ (self, x, y):
-        self.x = x
-        self.y = y
-        self.tilt = 0
-        self.tick_count = 0
-        self.velo = 0
-        self.img_state = 0
-        self.img = self.IMGS[0]
-        self.height = self.y
-    def jump(self):
-        self.velo = -10.5
-        self.tick_count = 0
-        self.height = self.y
-    def move(self):
-        self.tick_count +=1
+def draw_window(win, bird):
+    win.blit(BG_IMG, (0,0))
+    bird.move()
+    bird.draw(win)
+    
+    pg.display.update()
+
+
+def main():
+    clock = pg.time.Clock()
+    birdy = Bird(200,200)
+
+
+    running = True
+
+    while running:
+        clock.tick(30)
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                running = False
+
+        
+        draw_window(WIN, birdy)
+
+    pg.quit()
+
+if __name__ == "__main__":
+    main()
+
+
 
 
