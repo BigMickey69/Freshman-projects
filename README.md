@@ -1,2 +1,0 @@
-# Freshman-projects
-E94121208石維廉大一一年以來的各種projects
