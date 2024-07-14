@@ -1,0 +1,41 @@
+{% extends "base.html" %} 
+{% block title %}系統原理{% endblock %} 
+{% block content %}
+    <h3 class="text-center mt-5 mb-4" style="font-size: 2.6em;"><strong>系統原理...</h3></strong>
+      <div style="font-size: 1.25em; text-align: left;" class="ml-5"><div class="ml-2">
+        <strong style="font-size: 1.2em;">簡單原理:</strong><br>
+        Discord Clouding 是利用 Discord 訊息中附檔不會過期這個特點來造就無限雲端空間<br>
+        用愛發動一切😘❤!<br>
+        <br><br><br>
+        <strong style="font-size: 1.2em;">細說原理:</strong><br>
+        兩個VScode程序，一邊架起Discord Bot、另一邊負責架起網站本身，Discord bot 叫做 管家José(念hoe-zay)，以下將簡稱兩端為「JOSE」與「Website端」。
+        JOSE 不只執行Discord bot，他本身也有使用flask，他會在port 2121 上聆聽訊息，從而建立起兩端溝通用的橋樑，而 管家JOSE 則居住在Discord Clouding 這個頻道上。
+        所有程式執行在台中老家的電腦中，也已調整老家路由器設定forward port 1212，讓任何人都能連上在port 1212上的Discord Clouding服務<br>
+      </div><br></div>
+        <div style="text-align: center;">
+          <img src="{{ url_for('static', filename='3.png') }}" alt="Image 3" style="display: inline-block; width: 70%; margin-right: 10px;">
+          <img src="{{ url_for('static', filename='2.png') }}" alt="Image 2" style="display: inline-block; width: 28%;">
+        </div>
+        
+        <div style="font-size: 1.25em; text-align: left;" class="ml-5"><div class="ml-2">
+        <br><br>
+        當使用者按下Upload file，檔案將上傳到 Website端 的本地硬碟中，Website端 將記錄檔案並賦予它獨特的ID，再將ID與名稱存入queue.json 並指示 JOSE 開始處理queue.json。
+        JOSE 收到指示後將從queue.json中的獨特ID找到要處理的檔案，將它分割成26,108,800 byte大小的chunks，一一將他們變為訊息中的附件上傳到創建的Discord頻道中。
+        而中間不斷著記錄檔案獨特ID背後每個chunk的訊息message ID，最後一併存入一個database，上傳完畢後再將伺服器本地檔案刪除、清空queue.json，並告知 Website端 檔案已上傳完畢<br><br>
+        (中間 JOSE 與 Website端 不斷傳遞著目前上傳的進度)<br>
+        <br><br>
+        等到使用者想下載時按下下載鍵，Website端 將ID與名稱存入另一個download_queue.json，也告知 JOSE 開始處理download_queue。
+        JOSE 打開download_queue.json，與databse中的獨特ID做比較來尋找檔案背後每個chunk儲存的message ID，
+        從而找到訊息中附件並下載每個chunk到伺服器本地硬碟，最後將他們變回一個原始檔案，而把獨特ID寫進ready_download.json，也告知 Website端 已處理完畢<br>
+        <br></div></div>
+        <img src="{{ url_for('static', filename='1.png') }}" class="center" alt="Image 1" style="width: 50vw; min-width: 300px;">
+        <br><br>
+        <br>
+        <div style="font-size: 1.25em; text-align: left;" class="ml-5"><div class="ml-2">
+        最後的最後，使用者按下Downloader鍵來請 Website端 將完整檔案傳回使用者。<br>
+        而這一切的同時，背後有個清潔線程每分鐘清除著不屬於ready_download.json的檔案，清除後正式完成一次這個系統的週期<br>
+        <img src="{{ url_for('static', filename='4.png') }}" class="right" alt="Image 4" style="width: 25vw; min-width: 200px;">
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </div></div>
+{% endblock %}

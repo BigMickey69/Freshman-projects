@@ -1,0 +1,79 @@
+{% extends "base.html" %} 
+{% block title %}How to use Discord Clouding{% endblock %} 
+
+{% block content %}
+<div class="container text-center mt-5">
+  <div class="row align-items-center">
+      <div class="col-12 col-md-3 mb-3 mb-md-0">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="img-fluid" style="max-height: 300px;">
+      </div>
+      <div class="col-12 col-md-9">
+          <h3 class="mt-3" style="font-size: 3.2em;"><strong>歡迎使用 Discord Clouding!</strong></h3>
+        </div>
+        <div class="d-flex justify-content-center align-items-center mt-3">
+          <span class="mr-3" style="font-size: 1.2em;">請選擇您的慣用語言: </span>
+          <a href="{{ url_for('views.how_to_use_en') }}" class="btn btn-secondary mr-2">English</a>
+          <a href="{{ url_for('views.how_to_use_ch') }}" class="btn btn-primary">中文</a>
+      </div>
+  </div>
+    
+    
+  <br><br>
+  <div style="font-size: 2.3em; text-align: center;"><strong>
+      步驟 1: 創帳號
+  </div></strong>
+  <br>
+  <div >
+    <div style="font-size: 1.3em; text-align: left;" >
+      按下左上角的 Sign up 鍵來創建專屬於你的帳號，信箱、名子、密碼可隨便填 <br>
+      信箱的意義只是用來辨識用戶，畢竟不同用戶可能用同名，但信箱必須是獨特的
+    </div></div>
+
+  <br><br><br>
+      <div style="font-size: 2.3em; text-align: center;"><strong>
+          步驟 2: 登入
+      </div></strong>
+  <br>
+  <div style="font-size: 1.3em; text-align: left;">
+    用你剛創建的信箱與密碼登錄吧! 不須多做說明
+  </div>
+
+  <br><br><br>
+  <div>
+    <div style="font-size: 2.3em; text-align: center;"><strong>
+        步驟 3: 開始上傳</div></strong><span>(目前不支援中文檔名👉👈)</span>
+</div><br>
+<div style="font-size: 1.3em; text-align: left;">
+  按下 <span><button type="submit" class="btn btn-dark">Upload</button></span> 上傳你的寶貝檔案，上傳進度將會顯示在檔案的右手邊。 可以按下 <span class="fa fa-refresh btn-warning btn-lg "></span>來手動及時更新當前上傳進度，不過也沒這必要<br>  
+  注意，若檔案大小有些大，上傳時網頁會看起來沒有回應，此時檔案正在上傳到伺服器本地端，不必重新整理網頁，等到上傳完畢就會回來<br>
+  <br><span style="color: red"> <strong>**重要**</strong></span> 太快速的一而再、再而三的上傳檔案可能會遇到問題， 盡量等到你上傳的檔案右手邊出現 <span class="badge badge-info" style="font-size: 1em;"><i class="fa fa-check"></i></span> 藍色勾勾時(象徵檔案已上傳到Discord伺服器)再進行後續操作。 
+  (i.e. <strong>Queue下載、</strong> <strong>刪除 </strong> 或是 <strong>上傳</strong>)
+</div>
+
+<br><br><br>
+      <div style="font-size: 2.3em; text-align: center;"><strong>
+          步驟 4: 佇列下載
+      </div></strong>
+  <br>
+  <div style="font-size: 1.3em; text-align: left;">
+     按下 <span><button type="submit" class="btn btn-primary ">Queue download</button></span>
+     來開始下載程序，檔案將從Discord伺服器移到本伺服器本端硬碟，進度一樣將會顯示在檔案的右手邊，也同樣可按下<span class="fa fa-refresh btn-warning btn-lg "></span>來手動及時更新<br> 
+     一旦出現 <span class="badge badge-success" style="font-size: 1em;"><i class="fa fa-check"></i></span> ，這就代表你的檔案已準備好下載， 太好了!!
+     按下 <span><button type="submit" class="btn-success">Downloader</button></span> 來下載佇列中(有綠色勾勾)的檔案<br>
+  </div>
+</div>
+
+<br><br><br>
+      <div style="font-size: 2.3em; text-align: center;"><strong>
+          步驟 5: 享受 &lt;3
+      </div></strong>
+  <br>
+  <div style="font-size: 1.3em; text-align: left;">
+    無限大雲端空間，可在無限多裝置上使用，而最棒的是這一切都FREE 🤑<br>
+    
+    (P.S. 再次提醒，安全起見使用時請對系統友善一點，多一點耐心，可以的話檔案一個一個上傳，一個一個下載，操作太快入的話系統可能會凍未條😔)
+  </div>
+  <br><br>
+  <img src="{{ url_for('static', filename='dancing-dog.gif') }}" class="center" alt="dancing-dog" style="width: 12.5vw; min-width: 200px;">
+<br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

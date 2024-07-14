@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}Discord Clouding{% endblock %}
+{% block content %}
+
+<div class="container logo-margin d-flex justify-content-center align-items-center">
+    <img src="{{ url_for('static', filename='logo.png') }}?v=1.0" alt="Logo" style="height: 300px;">
+</div>
+
+    <h1 class="text-center mt-2">Discord Clouding</h1>
+    <div class="d-flex justify-content-end">
+        <a href="{{ url_for('views.check_download') }}" 
+        class="btn btn-success spacing-bottom ">Downloader</a>
+    </div>
+    <div class="d-flex justify-content-end">
+        <a href="{{ url_for('views.home') }}" id="refresh-button" class="btn btn-warning btn-sm">
+            <i class="fa fa-refresh"></i>
+        </a>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file"><strong>File List</strong></label>
+            <input type="file" class="form-control" id="file" name="file">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-dark">Upload</button>
+    </form>
+    <br>
+    <ul class="list-group">
+        {% for file in files %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ file.file_name }}
+            <div> 
+                {%if file.progress != ""%}
+                <span class="progress-text">
+                    {{ file.progress }}
+                </span>
+                {% endif %}
+                {% if file.upload_ready == 1 %}
+                <span class="badge badge-info"><i class="fa fa-check"></i></span>
+                {% endif %}
+                {% if file.download_ready == 1 %}
+                <span class="badge badge-success"><i class="fa fa-check"></i></span>
+                {% endif %}
+                <a href="{{ url_for('views.download_file', file_id=file.id) }}" 
+                class="btn btn-primary btn-sm ml-2">Queue download</a>
+                <button type="button" class="btn btn-danger btn-sm" onclick="deleteFile({{ file.id }})">Delete</button
+            </div>
+        </li>
+        {% endfor %}
+    </ul><br><br><br><br>
+{% endblock %}
+
+{% block javascript %}
+<script>
+function deleteFile(fileId) {
+    fetch('/delete-file', {
+        method: 'POST',
+        body: JSON.stringify({ fileId: fileId }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((_res) => {
+        window.location.href = "/";
+    });
+}
+
+
+let fileInput = document.getElementById('file');
+let isChoosingFile = false;
+let cycles = 0;
+
+fileInput.addEventListener('click', function() {
+    isChoosingFile = true;
+    console.log("File input clicked.");
+});
+
+fileInput.addEventListener('change', function() {
+    if (this.files.length > 0) {
+        isChoosingFile = true;
+        console.log("File selected:", this.files[0].name);
+      } else {
+        isChoosingFile = false;
+        console.log("No file selected");
+      }
+});
+
+
+function saveScroll() {
+    localStorage.setItem('scrollPos', window.scrollY);
+}
+
+function restoreScroll() {
+    const scrollPos = localStorage.getItem('scrollPos');
+    if (scrollPos !== null) {
+        window.scrollTo(0, parseInt(scrollPos, 10));
+        localStorage.removeItem('scrollPos'); 
+    }
+}
+window.addEventListener('load', restoreScroll);
+
+
+setInterval(function() {
+    console.log("isChoosingFile:", isChoosingFile);
+    if (!isChoosingFile) {
+        cycles = 0
+        console.log("Refreshing page...");
+        saveScroll();
+        window.location.reload();
+    } else {
+        cycles += 1
+        if (cycles == 20){
+            console.log("File selection took too long, setting isChoosingFile to false");
+            isChoosingFile = false;
+            saveScroll();
+            window.location.reload()
+        }
+        console.log("Page not refreshed - file input in use.");
+    }
+}, 3500);
+</script>
+{% endblock %}

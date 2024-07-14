@@ -1,0 +1,78 @@
+{% extends "base.html" %} 
+{% block title %}How to use Discord Clouding{% endblock %} 
+
+{% block content %}
+<div class="container text-center mt-5">
+  <div class="row align-items-center">
+      <div class="col-12 col-md-3 mb-3 mb-md-0">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="img-fluid" style="max-height: 300px;">
+      </div>
+      <div class="col-12 col-md-9">
+          <h3 class="mt-3" style="font-size: 3.2em;"><strong>Welcome to Discord Clouding!</strong></h3>
+        </div><br>
+        <div class="d-flex justify-content-center align-items-center mt-3">
+          <span class="mr-3" style="font-size: 1.2em;">Choose your preferred language: </span>
+          <a href="{{ url_for('views.how_to_use_en') }}" class="btn btn-primary mr-2">English</a>
+          <a href="{{ url_for('views.how_to_use_ch') }}" class="btn btn-secondary">中文</a>
+      </div>
+  </div>
+    
+    
+  <br><br>
+  <div style="font-size: 2.3em; text-align: center;"><strong>
+      Step 1: Create an Account
+  </div></strong>
+  <br>
+  <div >
+    <div style="font-size: 1.3em; text-align: left;" >
+      Click on Sign up and create your very own account! <br>
+      Feel free to use any email & name, it doesn't matter whether it's real or not
+    </div></div>
+
+  <br><br><br>
+      <div style="font-size: 2.3em; text-align: center;"><strong>
+          Step 2: Log In
+      </div></strong>
+  <br>
+  <div style="font-size: 1.3em; text-align: left;">
+    Log in with the email and password you signed up with, pretty simple stuff!
+  </div>
+
+  <br><br><br>
+  <div>
+    <div style="font-size: 2.3em; text-align: center;"><strong>
+        Step 3: Start Uploading!</div></strong><span>(Chinese filenames aren't supported👉👈)</span>
+</div><br>
+<div style="font-size: 1.3em; text-align: left;">
+  Click on <span><button type="submit" class="btn btn-dark">Upload</button></span> to upload a file of your choice. The progress of the upload will be displayed on your file.  Click <span class="fa fa-refresh btn-warning btn-lg "></span> to refresh the status of your files manually if you want to.<br>  
+  If the file you're uploading is big, the page may look like it's not responding when uploading, the file will be uploading to my local server's hardrive, just be patient and wait until the page returns to normal
+  <br><span style="color: red"> <strong>**IMPORTANT**</strong></span> Uploading files too quickly could lead to files incorrectly uploaded or logged. Please wait until you see <span class="badge badge-info" style="font-size: 1em;"><i class="fa fa-check"></i></span> Blue-Checkmark signaling that your file has been uploaded to discord's server before further actions. 
+  (i.e. <strong>Downloading,</strong> <strong>Deleting it </strong> or <strong>uploading</strong>)
+</div>
+
+<br><br><br>
+      <div style="font-size: 2.3em; text-align: center;"><strong>
+          Step 4: Queue Downloading
+      </div></strong>
+  <br>
+  <div style="font-size: 1.3em; text-align: left;">
+    Click on <span><button type="submit" class="btn btn-primary ">Queue download</button></span>
+     to start queueing download of your file from discord's server to my server's local harddrive, you wait till your file is ready or refresh the status manually with <span class="fa fa-refresh btn-warning btn-lg "></span><br> 
+     Once you see <span class="badge badge-success" style="font-size: 1em;"><i class="fa fa-check"></i></span> it means your file is now ready for download. Congratulations!
+     Click on <span><button type="submit" class="btn-success">Downloader</button></span> to download files that are ready! 
+  </div>
+</div>
+
+<br><br><br>
+      <div style="font-size: 2.3em; text-align: center;"><strong>
+          Step 5: Enjoy &lt;3
+      </div></strong>
+  <br>
+  <div style="font-size: 1.3em; text-align: left;">
+    Hip hip hooray! Infinite storage accross all devices, and the best part is it's completely free 🤑<br>
+    (P.S. Once again, just to be safe please upload and download files slowly, preferably one at a time, system could very likely run into problems when doing operations too fast)
+  </div>
+  <br><br>
+  <img src="{{ url_for('static', filename='dancing-dog.gif') }}" class="center" alt="dancing-dog" style="width: 12.5vw; min-width: 200px;">
+<br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

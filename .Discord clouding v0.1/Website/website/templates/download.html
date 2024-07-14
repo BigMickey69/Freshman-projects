@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Downloading File...{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5 " style="font-size: 2.4em;">
+    <h3>Downloading your file...</h3>
+</div><br>
+<p style="font-size: 1.8em;" class="text-center">You will be redirected back shortly 😌</p>
+
+<script>
+    function downloadFile() {
+        var link = document.createElement('a');
+        link.href = "{{ file_path }}";
+        link.download = '';
+        link.click();
+
+        setTimeout(function() {
+            window.location.href = "{{ url_for('views.home') }}";
+        }, 3000); 
+    }
+
+    window.onload = downloadFile;
+</script>
+{% endblock %}

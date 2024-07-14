@@ -1,0 +1,52 @@
+.format-alerts {
+    position: fixed;
+    top: 500;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 900;
+    width: 100%;
+    max-width: 1000px; 
+  }
+
+.mt-5 {
+    margin-top: 3rem; 
+}
+.right-margin {
+    margin-right: 20px; 
+}
+
+.text-center {
+    text-align: center;
+}
+
+.spacing-bottom {
+    margin-bottom: 10px; 
+}
+
+.logo-margin {
+    margin-top: 2rem; 
+}
+
+.logo-left-margin {
+    margin-left: 5rem; 
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+.centerer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+

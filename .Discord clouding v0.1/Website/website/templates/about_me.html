@@ -1,0 +1,58 @@
+{% extends "base.html" %} 
+{% block title %}About me...{% endblock %} 
+{% block content %}
+    <h3 class="text-center mt-5 mb-4" style="font-size: 2.5em;">About me...</h3>
+      <div style="font-size: 1.2em; text-align: left;" class="ml-5"><div class="ml-2">
+        <br>
+        我是成大工科系大一的石維廉，<br>
+        Discord Clouding 這個 project 是程式歷程中很多個第一次。
+        第一次接觸伺服器前端 + 後端，第一次使用 HTML、Cookies、CSS，第一次接觸 Javascript
+        第一次操作 Discord Bot 與 Discord的API，
+        第一次使用 SQL，還有之前稍微碰過但摸不著頭緒的線程Threading
+        還有一堆雜七雜八的import函式庫...
+        <br><br>
+        目前Discord Ck僅能算是版本v0.1，還只是一個巨大 project 中的雛型，
+        儘管如此，程式碼已經約1000行。
+        本project 很多方面是零基礎邊學邊做，
+        全程沒有使用Co-Piolet，因此一些地方尤其是細節上的處理有待加強，
+        但即使這樣，目前的系統已經能實現無限大的雲端空間。<br>
+        (P.S.有仔細看過 Discord 的 EULA，而 "Discord Clouding" 沒有違反使用者條約)<br>
+        <br>
+        <br>
+        原本是希望這個雛形就能完全同步顯示檔案的上傳與下載時顯示進度條，
+        但不幸目前的程式碼與SocketIO似乎有甚麼衝突，幾天泡在 Youtube + 爬文最後仍撞牆而遲遲無法解決，
+        ChatGPT、Gemini也無法找到問題，猜測需要從根本修正一些implementation才行。
+        最後選擇讓頁面每3.5秒刷新一次來更新這資訊，對使用者而言這做法是沒什麼問題，不過真正的同步才是理想，
+        目前試過Eventlet 與 Monkey patch，而現在正在研究 Celery 的可能性。<br>
+        <br>
+        我希望Discord Clouding 可以是個長久的project，願景是讓它成為一個 All-in-one 網站，
+        提供使用者一個免費且沒有廣告的綠洲，也提供多面向多功能服務。<br>
+        <br>
+        <br>
+        <strong>[未來規劃]: </strong><br>
+        <br>
+        <strong>短期:<br></strong>
+        解決 SocketIO 問題並完成真正的同步更新資訊<br>
+        新增 Gmail 認證與資安上的問題<br>
+        將完整 Database 從本端帶到網路上<br>
+        <br>
+        <strong>中期:<br></strong>
+        使目前檔案清單 -> 檔案總管<br>
+        可以名稱、大小或是日期排序檔案<br>
+        也能讓使用者隨意新增資料夾<br>
+        新增共用連結，讓使用者能分享檔案給朋友<br>
+        <br>
+        <strong>中長期:<br></strong>
+        新增正式URL (沒錢QQ)<br>
+        新增便利條，好比 Google Keep 那樣<br>
+        新增備忘錄，使機器人能在指定時間寄Email提醒<br>
+        新增日曆，可在上面規劃時間<br>
+        融入簡單的小遊戲(ex. 2048、貪食蛇、接龍、俄羅斯方塊)<br>
+        <br>
+        <strong>長期:</strong>
+        做出APP，網站與APP的連結<br>
+        把管家José(念hoe-zay)變成語言模型AI<br>
+        
+        <br><br><br><br><br><br><br><br>
+      </div></div>
+{% endblock %}

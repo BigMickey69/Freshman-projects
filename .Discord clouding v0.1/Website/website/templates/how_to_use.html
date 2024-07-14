@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+{% block title %}How to use Discord Clouding{% endblock %} 
+
+{% block content %}
+<div class="container text-center mt-5">
+  <div class="row align-items-center">
+      <div class="col-12 col-md-3 mb-3 mb-md-0">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="img-fluid" style="max-height: 300px;">
+      </div>
+      <div class="col-12 col-md-9">
+          <h3 class="mt-3" style="font-size: 3.2em;"><strong>Welcome to Discord Clouding!</strong></h3>
+        </div><br>
+        <div class="d-flex justify-content-center align-items-center mt-3">
+          <span class="mr-3" style="font-size: 1.2em;">Choose your preferred language: </span>
+          <a href="{{ url_for('views.how_to_use_en') }}" class="btn btn-secondary mr-2">English</a>
+          <a href="{{ url_for('views.how_to_use_ch') }}" class="btn btn-secondary">中文</a>
+      </div>
+  </div>
+    
+    
+  
+<br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
