@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-debug-8:\\drawable_cat.png.flat",
+        "source": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-main-10:\\drawable\\cat.png"
+    },
+    {
+        "merged": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-debug-8:\\raw_meow.mp3.flat",
+        "source": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-main-10:\\raw\\meow.mp3"
+    },
+    {
+        "merged": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-debug-8:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-main-10:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-debug-8:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-main-10:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.mcuhq.simplebluetooth.app-debug-8:/layout_activity_main.xml.flat",
+        "source": "com.mcuhq.simplebluetooth.app-main-10:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-debug-8:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-main-10:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-debug-8:\\drawable_trans.png.flat",
+        "source": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-main-10:\\drawable\\trans.png"
+    },
+    {
+        "merged": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-debug-8:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-main-10:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-debug-8:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-main-10:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-debug-8:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\William\\.gradle\\daemon\\8.6\\com.mcuhq.simplebluetooth.app-main-10:\\mipmap-xxxhdpi\\ic_launcher.png"
+    }
+]

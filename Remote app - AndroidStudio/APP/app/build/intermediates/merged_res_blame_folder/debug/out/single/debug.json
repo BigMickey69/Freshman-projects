@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.mcuhq.simplebluetooth.app-merged_res-6:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.mcuhq.simplebluetooth.app-main-8:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.mcuhq.simplebluetooth.app-merged_res-6:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.mcuhq.simplebluetooth.app-main-8:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.mcuhq.simplebluetooth.app-merged_res-6:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.mcuhq.simplebluetooth.app-main-8:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.mcuhq.simplebluetooth.app-merged_res-6:/layout_activity_main.xml.flat",
+        "source": "com.mcuhq.simplebluetooth.app-main-8:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.mcuhq.simplebluetooth.app-merged_res-6:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.mcuhq.simplebluetooth.app-main-8:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.mcuhq.simplebluetooth.app-merged_res-6:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.mcuhq.simplebluetooth.app-main-8:/mipmap-mdpi/ic_launcher.png"
+    }
+]

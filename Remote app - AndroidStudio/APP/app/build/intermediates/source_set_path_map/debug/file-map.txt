@@ -1,0 +1,9 @@
+com.mcuhq.simplebluetooth.app-appcompat-v7-23.3.0-0 C:\Users\William\.gradle\caches\transforms-3\cf181159970c0dce8bae10fc8e639865\transformed\appcompat-v7-23.3.0\res
+com.mcuhq.simplebluetooth.app-pngs-1 C:\Users\William\AndroidStudioProjects\Android-Simple-Bluetooth-Example-master\app\build\generated\res\pngs\debug
+com.mcuhq.simplebluetooth.app-resValues-2 C:\Users\William\AndroidStudioProjects\Android-Simple-Bluetooth-Example-master\app\build\generated\res\resValues\debug
+com.mcuhq.simplebluetooth.app-rs-3 C:\Users\William\AndroidStudioProjects\Android-Simple-Bluetooth-Example-master\app\build\generated\res\rs\debug
+com.mcuhq.simplebluetooth.app-mergeDebugResources-4 C:\Users\William\AndroidStudioProjects\Android-Simple-Bluetooth-Example-master\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.mcuhq.simplebluetooth.app-mergeDebugResources-5 C:\Users\William\AndroidStudioProjects\Android-Simple-Bluetooth-Example-master\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.mcuhq.simplebluetooth.app-merged_res-6 C:\Users\William\AndroidStudioProjects\Android-Simple-Bluetooth-Example-master\app\build\intermediates\merged_res\debug
+com.mcuhq.simplebluetooth.app-debug-7 C:\Users\William\AndroidStudioProjects\Android-Simple-Bluetooth-Example-master\app\src\debug\res
+com.mcuhq.simplebluetooth.app-main-8 C:\Users\William\AndroidStudioProjects\Android-Simple-Bluetooth-Example-master\app\src\main\res
