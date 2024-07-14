@@ -2,6 +2,10 @@ import pygame as pg
 import os
 import random
 
+pg.mixer.init()
+flap_path = os.path.join("assets", "flap.mp3")
+flap = pg.mixer.Sound(flap_path)
+
 def scale_image(image, scale_factor):
     width = image.get_width() * scale_factor
     height = image.get_height() * scale_factor
@@ -58,6 +62,7 @@ class Bird:
         self.tick_count = 0
         self.height = self.y
         self.tilt = self.MAX_ROT
+        flap.play()
 
     def move(self):
         self.tick_count +=1

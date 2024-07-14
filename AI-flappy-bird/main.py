@@ -4,6 +4,8 @@ import time
 from classes import Bird, Pipe, Ground
 import neat
 
+tick_rate = 30 # gamespeed
+
 config_path = os.path.join("NEAT-config.txt")
 
 def neat_setup(config_path):
@@ -29,6 +31,7 @@ def neat_setup(config_path):
 WHITE = (0,0,0)
 BLACK = (255,255,255)
 Gen = -1
+
 
 pg.font.init()
 FONT = pg.font.SysFont("comicsans", 45)
@@ -127,13 +130,19 @@ def main(genomes, config):
     running = True
 
     while running:
-        clock.tick(30)
+        global tick_rate
+        clock.tick(tick_rate)
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 running = False
                 pg.quit()
                 quit()
-
+            if event.type == pg.KEYDOWN:
+                if event.key == pg.K_SPACE:
+                    tick_rate = 120
+            elif event.type == pg.KEYUP:
+                if event.key == pg.K_SPACE:
+                    tick_rate = 30
         pipe_index = 0
         if len(birds) > 0:
             if len(pipes) > 1 and birds[0].x > pipes[0].x + pipes[0].TOP_PIPE.get_width():
