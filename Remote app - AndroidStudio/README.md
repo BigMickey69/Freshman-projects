@@ -3,5 +3,12 @@
 目標是用Arduino、AUTOCAD、AndroidStudio
 做出一台能夠用手機app操控的遙控車
 創意、速度、性能與功能都是評分原則
-介紹影片: https://youtu.be/K1z-c-GhoRM
+
+洽好是第一次使用Java，
+不熟悉的語言、不熟悉的軟體、不熟悉的語法
+導致程式這環節是整個project花最多時間的地方
+好幾天泡在國外論壇與AndroidStudio官網研究
+
+
+介紹短片: https://youtu.be/K1z-c-GhoRM
 
