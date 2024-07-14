@@ -1,4 +1,4 @@
-demonstration vid: https://www.youtube.com/watch?v=Z1VQu9UOKmY
+展示短片: https://www.youtube.com/watch?v=Z1VQu9UOKmY
 
 #steps to take!
 1.recreate flappy bird with python
