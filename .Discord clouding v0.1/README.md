@@ -4,9 +4,9 @@
 預計伺服器從今天算起 2024/7/15 開到暑假結束，
 有請幾位朋友測試，說明使用方法後都有使用成功
 
-網站架在：http://118.170.29.147:1212/
+網站架在：http://discordclouding.asuscomm.com:1212/
 
-使用說明：http://118.170.29.147:1212/how-to-use
+使用說明：http://discordclouding.asuscomm.com:1212/how-to-use
 
 若想測試但不想註冊，歡迎使用測試帳號 → 
     email = Test@gmail.com
@@ -15,9 +15,9 @@
 若想看背後的Discord 頻道 → 加入連結：https://discord.gg/fTpNeF4UAd
 
 
-細說原理：http://118.170.29.147:1212/logic
+細說原理：http://discordclouding.asuscomm.com:1212/logic
 
-關於我：http://118.170.29.147:1212/about-me
+關於我：http://discordclouding.asuscomm.com:1212/about-me
 
 
 
