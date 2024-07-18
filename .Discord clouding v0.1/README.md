@@ -21,6 +21,7 @@
 
 
 ## 網站測試
+
 網站架在：http://discordclouding.asuscomm.com:1212/
 
 使用說明：http://discordclouding.asuscomm.com:1212/how-to-use
@@ -41,7 +42,6 @@
 ## 安裝與運行
 
 ### 依賴項
-- Python 3.x
 - Flask
 - SQLAlchemy
 - Flask-Login
