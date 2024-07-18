@@ -12,7 +12,7 @@ def create_zero_array(n):
 WIDTH, HEIGHT = 600, 600
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Snakey Snakey slither slither")
-QQ_img = pygame.image.load("QQ.png")
+QQ_img = pygame.image.load("assets/QQ.png")
 Running = 1
 timer = 0
 startingtimer=0
@@ -31,7 +31,7 @@ grid [0][0] = 1
 p_cords = [0,0]
 old_p_cords=[[0,0]]
 
-eyes_img = pygame.image.load("eyes.png")
+eyes_img = pygame.image.load("assets/eyes.png")
 
 
 def draw_grid(grid, head_position, direction):
