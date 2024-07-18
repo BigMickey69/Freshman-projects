@@ -1,9 +1,26 @@
+# 利用 Discord 訊息中附檔不會過期這個特點來造就無限雲端空間
 
-一句話就是:
-「利用 Discord 訊息中附檔不會過期這個特點來造就無限雲端空間」
+本專案利用 Discord 訊息中附檔不會過期的特點，實現了一個無限雲端空間的解決方案。通過將文件分割為多個塊上傳至 Discord 頻道，並在需要時重新組裝下載，可以有效地存儲和管理大量文件。
+
 預計伺服器從今天算起 2024/7/15 開到暑假結束，
-有請幾位朋友測試，說明使用方法後都有使用成功
+有請幾位朋友測試，說明使用方法後都有使用有成功使用
 
+## 專案結構
+
+- **Bot/main.py**：Discord Bot主程序，負責文件的上傳、下載、與 Discord 伺服器的交互，也有使用Flask來與網站端溝通。
+- **Bot/convert_to_chunks.py**：將檔案分割為~25MB大小之chunks
+- **Bot/chunks_to_file.py**：將檔案分割的chunks轉回原文件
+- **Bot/responses.py**：處理Discord頻道上與Jose講話時的回應
+
+- **Website/main.py**：網站主程序，提供用戶界面進行文件上傳和管理。
+- **Website/website/\_\_init\_\_.py**：Flask 應用的初始化，包括數據庫設置和清理機制。
+- **Website/website/auth.py**：處理用戶認證和授權。
+- **Website/website/models.py**：數據庫模型定義，包括用戶、文件等。
+- **Website/website/cleanup.py**：定期清理下載文件的機制。
+- **Website/website/views.py**：定義各種視圖函數，處理用戶請求和界面顯示。
+
+
+## 網站測試
 網站架在：http://discordclouding.asuscomm.com:1212/
 
 使用說明：http://discordclouding.asuscomm.com:1212/how-to-use
@@ -21,6 +38,17 @@
 
 
 
+## 安裝與運行
+
+### 依賴項
+- Python 3.x
+- Flask
+- SQLAlchemy
+- Flask-Login
+- Discord.py
+- requests
+- aiofiles
+- python-dotenv
 
 若想自己執行看看：
     到Discord Developer Portal申請一個Discord bot
