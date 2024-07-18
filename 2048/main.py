@@ -12,11 +12,11 @@ WIDTH, HEIGHT = 650, 900
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("2048 as basic as can BE!")
 
-splash = pygame.image.load("splash.png")
-background = pygame.image.load("grid.png").convert_alpha()
-win_text = pygame.image.load("win.png")
-overlay = pygame.image.load("overlay.png")
-button_img = pygame.image.load("button.png")
+splash = pygame.image.load("assets/splash.png")
+background = pygame.image.load("assets/grid.png").convert_alpha()
+win_text = pygame.image.load("assets/win.png")
+overlay = pygame.image.load("assets/overlay.png")
+button_img = pygame.image.load("assets/button.png")
 bg_X, bg_Y = 75, 300
 
 grid = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
