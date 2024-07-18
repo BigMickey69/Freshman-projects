@@ -1,3 +1,5 @@
+介紹短片: https://youtu.be/K1z-c-GhoRM
+
 這個project要說是純軟有些不正確
 但軟體是核心之一
 目標是用Arduino、AUTOCAD、AndroidStudio
@@ -10,5 +12,5 @@
 好幾天泡在國外論壇與AndroidStudio官網研究
 
 
-介紹短片: https://youtu.be/K1z-c-GhoRM
+
 
