@@ -140,6 +140,7 @@ def download_file(file_id):
     file = File.query.get(file_id)
     if file and file.user_id == current_user.id:
         file.progress = "downloading..."
+        db.session.commit()
         file_name = file.file_name
         with open(DOWNLOAD_QUEUE_FILE_PATH, 'r') as f:
             queue = json.load(f)
